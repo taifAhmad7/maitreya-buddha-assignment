@@ -5,6 +5,7 @@ import { IoEyeOutline } from 'react-icons/io5';
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = useState(true);
+  const [showDescription, setShowDescription] = useState(false);
 
   return (
     <>
@@ -48,22 +49,35 @@ const Sidebar = () => {
             <p>Location: National Museum</p>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-8">
             <h3 className="mb-2 text-gray-900">Description:</h3>
             <p className="text-sm text-gray-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
               totam expedita nihil quod. Minima sit repudiandae, nostrum, omnis
               nam, tempora odit unde dolores necessitatibus odio ipsum!
-              Reiciendis quis officiis voluptatem! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Ut at doloribus ea? Optio sequi
-              facere sed, fugit vitae dolor deleniti facilis quaerat. Qui omnis
-              modi totam blanditiis non architecto vel.
-            </p>
-          </div>
-
-          <div className="mb-6">
-            <p className="uppercase tracking tracking-widest text-amber-700 text-sm">
-              Read More
+              <span className={`${showDescription ? 'hidden' : ''}`}>...</span>
+              <span
+                onClick={() => setShowDescription(!showDescription)}
+                className={`pointer tracking text-amber-700 text-sm cursor-pointer ${
+                  showDescription ? 'hidden' : ''
+                }`}
+              >
+                Read more
+              </span>
+              <span className={`${showDescription ? '' : 'hidden'}`}>
+                Reiciendis quis officiis voluptatem! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Ut at doloribus ea? Optio sequi
+                facere sed, fugit vitae dolor deleniti facilis quaerat. Qui
+                omnis modi totam blanditiis non architecto vel.
+              </span>
+              <span
+                onClick={() => setShowDescription(!showDescription)}
+                className={`pointer tracking text-amber-700 text-sm cursor-pointer ${
+                  showDescription ? '' : 'hidden'
+                }`}
+              >
+                ...Read less
+              </span>
             </p>
           </div>
 
