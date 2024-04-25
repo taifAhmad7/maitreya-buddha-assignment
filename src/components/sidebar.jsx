@@ -9,19 +9,24 @@ const Sidebar = () => {
 
   return (
     <>
+      {/* <div
+        className={`flex flex-col justify-center h-screen absolute z-10 w-full px-6 bg-white ${
+          showSidebar ? '' : `-translate-x-[600px]`
+        } transition-all duration-700 ease-in`}
+      > */}
       <div
-        className={`flex flex-col justify-center h-screen overflow-scroll w-[600px] px-4 ${
-          showSidebar ? '' : 'mr-[-600px]'
+        className={`flex flex-col justify-center h-screen absolute lg:static z-10 w-full lg:w-[600px] px-6 bg-white ${
+          showSidebar ? '' : `-translate-x-[600px] lg:mr-[-600px]`
         } transition-all duration-700 ease-in`}
       >
         <div>
-          <div className="mb-8">
-            <h2 className="text-2xl uppercase text-gray-600">
+          <div className="mb-6">
+            <h2 className="text-2xl lg:text-3xl uppercase text-gray-600">
               Maiteya Buddhia in gesture of fearlessness &#40;abhaya mudra&#41;
             </h2>
           </div>
 
-          <div className="flex gap-x-6 mb-8">
+          <div className="flex gap-x-6 mb-6">
             <div className="flex flex-col items-center gap-2">
               <div className="flex justify-center items-center bg-gray-200 h-9 w-9 rounded-full">
                 <BsShare className="w-6 h-6" />
@@ -42,14 +47,14 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <div className="mb-6 text-sm text-gray-800">
+          <div className="mb-4 text-sm text-gray-800">
             <p>Dynasty: Ahichchatra</p>
             <p>Period: 200 CE</p>
             <p>Material: Sandstone</p>
             <p>Location: National Museum</p>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6">
             <h3 className="mb-2 text-gray-900">Description:</h3>
             <p className="text-sm text-gray-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -92,7 +97,7 @@ const Sidebar = () => {
         </div>
       </div>
       <button
-        className={`left-3 top-3  fixed rounded-full text-2xl border-2 border-gray-300 w-11 h-11 hover:scale-110 transition-all ${
+        className={`left-3 top-3 z-20 fixed rounded-full text-2xl border-2 border-gray-300 w-11 h-11 hover:scale-110 transition-all ${
           showSidebar
             ? 'text-amber-900 bg-gray-200'
             : 'text-amber-200 bg-gray-900'
